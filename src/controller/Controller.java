@@ -18,13 +18,10 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     private Main main;
-    private File csvFile;
     private String filename;
     private CsvConverter csvConverter;
     private LessonsService lessonsService;
     private List<Unterricht> unterrichtList;
-    private String serverResponse;
-    Unterricht unterricht;
 
     @FXML
     private Button buttonConvert;
@@ -78,6 +75,7 @@ public class Controller implements Initializable {
         main = new Main();
         csvConverter = new CsvConverter();
         lessonsService = new LessonsService();
+        filename = "";
 
         lessonsService.setOnSucceeded(event -> {
             this.textFieldServerResponse.setText(this.lessonsService.getValue());

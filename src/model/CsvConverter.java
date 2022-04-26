@@ -8,6 +8,10 @@ import java.util.List;
 
 public class CsvConverter {
 
+    public CsvConverter(){
+
+    }
+
     public static List<Unterricht> readLessionsFromCSV(String fileName) throws IOException {
         List<Unterricht> unterrichtList = new ArrayList<>();
         Unterricht u;
